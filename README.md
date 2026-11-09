@@ -17,7 +17,7 @@ A photo from your phone usually contains the **GPS position** where it was taken
 | **Command line** | `pip install git+https://github.com/Bhushansavande/photo-privacy-scrubber.git` then `photoscrub clean photos/ -r -o clean/` |
 | **Python library** | `import photoscrub; data, report = photoscrub.clean(open("a.jpg","rb").read())` |
 
-No dependencies (pure Python 3.9+).
+No dependencies (pure Python 3.10+).
 
 ## Command line
 
