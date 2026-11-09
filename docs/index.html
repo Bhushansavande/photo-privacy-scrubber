@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src blob: data:; base-uri 'none'; form-action 'none'">
+<title>Photo Privacy Scrubber: remove location from photos</title>
+<meta name="description" content="Remove GPS location, camera serial numbers and other hidden data from your photos before you share them. Runs in your browser, nothing is uploaded.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Photo Privacy Scrubber</h1>
+  <p class="lead">Photos carry hidden data: where you were, when, which phone, sometimes a serial number. Remove it before you share. <strong>Nothing is uploaded</strong>: it all happens on your device, and the picture is not re-compressed (no quality loss).</p>
+
+  <label class="drop" id="drop" for="file">
+    <span class="big">Choose photos</span>
+    <span class="small">or drop them here &middot; JPEG, PNG, WebP</span>
+    <input id="file" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+  </label>
+
+  <details class="opts">
+    <summary>Options</summary>
+    <label><input type="checkbox" id="keepRot" checked> Keep the rotation flag (otherwise some photos show sideways)</label>
+    <label><input type="checkbox" id="keepIcc" checked> Keep the colour profile (more accurate colours)</label>
+    <label><input type="checkbox" id="keepTrailer"> Keep data hidden after the image (can contain a video or a copy)</label>
+  </details>
+
+  <div id="bar" hidden>
+    <button id="all" class="primary" type="button">Download all clean photos (.zip)</button>
+    <span id="summary"></span>
+  </div>
+  <div id="list"></div>
+
+  <section class="note">
+    <h2>What gets removed</h2>
+    <ul>
+      <li>GPS location, date and time, camera and phone model, lens, serial numbers</li>
+      <li>Editing history and author names (XMP), captions (IPTC), comments</li>
+      <li>Embedded thumbnails and data appended after the picture (some phones hide a video there)</li>
+      <li>PNG text notes (author, software, AI prompts)</li>
+    </ul>
+    <p>Not covered: HEIC/AVIF photos (convert to JPEG first), videos, and anything visible in the picture itself (faces, street signs, reflections). Removing metadata does not make a photo anonymous.</p>
+    <p>Free and open source (MIT). <a href="https://github.com/Bhushansavande/photo-privacy-scrubber">Source code, command-line version</a></p>
+  </section>
+</main>
+<script src="scrub.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

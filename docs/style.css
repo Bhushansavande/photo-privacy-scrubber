@@ -1,0 +1,27 @@
+:root{--bg:#f6f7f9;--card:#fff;--ink:#17202a;--mute:#5b6773;--line:#dfe3e8;--accent:#1f6feb;--warn:#b54708;--warnbg:#fff4e5;--ok:#067647;--okbg:#e7f6ee}
+@media (prefers-color-scheme:dark){:root{--bg:#10151b;--card:#18202a;--ink:#e8edf2;--mute:#9aa7b4;--line:#2a3440;--accent:#5aa2ff;--warn:#f5b461;--warnbg:#2b2112;--ok:#5fd29b;--okbg:#10261c}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:1.7rem;margin:.3em 0 .2em}h2{font-size:1.1rem}
+.lead{color:var(--mute)}
+.drop{display:block;border:2px dashed var(--line);border-radius:14px;padding:30px 16px;text-align:center;background:var(--card);cursor:pointer}
+.drop.over,.drop:focus-within{border-color:var(--accent)}
+.drop .big{display:block;font-size:1.2rem;font-weight:600;color:var(--accent)}
+.drop .small{color:var(--mute);font-size:.9rem}
+.drop input{position:absolute;opacity:0;width:1px;height:1px}
+.opts{margin:14px 0;color:var(--mute)}.opts label{display:block;margin:.4em 0}
+#bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:16px 0}
+button{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:10px 14px;cursor:pointer}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.item{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0}
+.item img{width:84px;height:84px;object-fit:cover;border-radius:8px;flex:none;background:var(--bg)}
+.item .body{min-width:0;flex:1}.item .name{font-weight:600;overflow-wrap:anywhere}
+.badge{display:inline-block;border-radius:99px;padding:1px 10px;font-size:.85rem;margin:2px 4px 2px 0}
+.badge.warn{background:var(--warnbg);color:var(--warn)}.badge.ok{background:var(--okbg);color:var(--ok)}
+.item ul{margin:.4em 0;padding-left:1.1em;color:var(--mute);font-size:.92rem}
+.item .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.err{color:var(--warn)}
+.note{margin-top:34px;color:var(--mute);font-size:.95rem}
+a{color:var(--accent)}
+[hidden]{display:none!important}
